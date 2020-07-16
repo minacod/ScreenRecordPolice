@@ -24,7 +24,7 @@ class ViewController: UIViewController {
     }
 
     @objc func presentAV() {
-        let url = URL(string: "https://bitdash-a.akamaihd.net/content/sintel/hls/playlist.m3u8")!
+        let url = URL(string: "http://techslides.com/demos/sample-videos/small.mp4")!
         let player = AVPlayer(url: url)
         
         let playerViewController = AVPlayerViewController()
@@ -40,6 +40,70 @@ class ViewController: UIViewController {
         VideoView.isEnabled = false
         navigationController?.dismiss(animated: true, completion: nil)
     }
+    
+    @IBAction func downloadVideo(_ sender: Any) {
+        let videoUrl = "http://techslides.com/demos/sample-videos/small.mp4"
+        
+        let docsUrl = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first!
+        
+        let destinationUrl = docsUrl.appendingPathComponent("vid.mp4")
+        if(FileManager().fileExists(atPath: destinationUrl.path)){
+            print("\n\nfile already exists\n\n")
+            let avAssest = AVAsset(url: destinationUrl)
+            let playerItem = AVPlayerItem(asset: avAssest)
+            
+            let player = AVPlayer(playerItem: playerItem)
+            let playerViewController = AVPlayerViewController()
+            playerViewController.setValue(true, forKey: "requiresLinearPlayback")
+            playerViewController.player = player
+            
+            self.present(playerViewController, animated: true, completion: {
+                player.play()
+            })
+        }
+        else{
+            //DispatchQueue.global(qos: .background).async {
+            var request = URLRequest(url: URL(string: videoUrl)!)
+            request.httpMethod = "GET"
+            _ = URLSession.shared.dataTask(with: request, completionHandler: { (data, response, error) in
+                if(error != nil){
+                    print("\n\nsome error occured\n\n")
+                    return
+                }
+                if let response = response as? HTTPURLResponse{
+                    if response.statusCode == 200{
+                        DispatchQueue.main.async {
+                            if let data = data{
+                                if let _ = try? data.write(to: destinationUrl, options: Data.WritingOptions.atomic){
+                                    print("\n\nurl data written\n\n")
+                                    let baseUrl = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first!
 
+                                    let assetUrl = baseUrl.appendingPathComponent("vid.mp4")
+
+                                    let url = assetUrl
+                                    print(url)
+                                    let avAssest = AVAsset(url: url)
+                                    let playerItem = AVPlayerItem(asset: avAssest)
+
+
+                                    let player = AVPlayer(playerItem: playerItem)
+                                    let playerViewController = AVPlayerViewController()
+                                    playerViewController.setValue(true, forKey: "requiresLinearPlayback")
+                                    playerViewController.player = player
+
+                                    self.present(playerViewController, animated: true, completion: {
+                                        player.play()
+                                    })
+                                }
+                                else{
+                                    print("\n\nerror again\n\n")
+                                }
+                            }//end if let data
+                        }//end dispatch main
+                    }//end if let response.status
+                }
+            }).resume()
+        }
+    }
 }
 
