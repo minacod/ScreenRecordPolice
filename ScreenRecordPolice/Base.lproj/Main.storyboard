@@ -21,21 +21,32 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LbI-kO-iKD" customClass="UIButton">
+                                <rect key="frame" x="20" y="44" width="374" height="243"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="243" id="nHG-9b-lre"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
+                            <constraint firstItem="LbI-kO-iKD" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="ToV-m4-3EO"/>
                             <constraint firstItem="v3c-0D-fWW" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="cZd-P1-oIK"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="LbI-kO-iKD" secondAttribute="trailing" constant="20" id="dbQ-oW-60y"/>
                             <constraint firstItem="v3c-0D-fWW" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="o8j-Jh-6Qx"/>
+                            <constraint firstItem="LbI-kO-iKD" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="slp-wV-fU8"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
+                        <outlet property="VideoView" destination="LbI-kO-iKD" id="dAr-1t-D2g"/>
                         <outlet property="label" destination="v3c-0D-fWW" id="CH2-RS-SNp"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="139" y="127"/>
+            <point key="canvasLocation" x="137.68115942028987" y="126.5625"/>
         </scene>
     </scenes>
 </document>
