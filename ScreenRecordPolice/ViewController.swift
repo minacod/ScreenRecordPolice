@@ -29,6 +29,7 @@ class ViewController: UIViewController {
             _ in
         })
         qrScanner.startScanning()
+        qrScanner.delegate = self
     }
     
     @objc func presentAV() {
