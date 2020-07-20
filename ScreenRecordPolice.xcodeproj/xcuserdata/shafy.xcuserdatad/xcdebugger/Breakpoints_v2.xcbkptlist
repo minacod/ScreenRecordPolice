@@ -3,4 +3,86 @@
    uuid = "4641FE83-55B6-4851-8813-A8281E3065D0"
    type = "1"
    version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "DFC902EF-C7C4-450D-B4B9-F3360F289C0B"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ScreenRecordPolice/DownloadManger.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "54"
+            endingLineNumber = "54"
+            landmarkName = "urlSessionDidFinishEvents(forBackgroundURLSession:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "DFC902EF-C7C4-450D-B4B9-F3360F289C0B - 7715bf2a2e498011"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "ScreenRecordPolice.DownloadManger.urlSessionDidFinishEvents(forBackgroundURLSession: __C.NSURLSession) -&gt; ()"
+                  moduleName = "ScreenRecordPolice"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/shafy/Desktop/mina/untitled%20folder/ScreenRecordPolice/ScreenRecordPolice/DownloadManger.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "54"
+                  endingLineNumber = "54"
+                  offsetFromSymbolStart = "176">
+               </Location>
+               <Location
+                  uuid = "DFC902EF-C7C4-450D-B4B9-F3360F289C0B - df70365f1f49a245"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 () -&gt; () in ScreenRecordPolice.DownloadManger.urlSessionDidFinishEvents(forBackgroundURLSession: __C.NSURLSession) -&gt; ()"
+                  moduleName = "ScreenRecordPolice"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/shafy/Desktop/mina/untitled%20folder/ScreenRecordPolice/ScreenRecordPolice/DownloadManger.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "56"
+                  endingLineNumber = "56"
+                  offsetFromSymbolStart = "77">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "8FED9449-08AC-460C-8F3D-1F5FB47F31EC"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ScreenRecordPolice/AppDelegate.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "36"
+            endingLineNumber = "36"
+            landmarkName = "application(_:handleEventsForBackgroundURLSession:completionHandler:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "DBC47F54-4B32-4D87-A768-56AD57DD82D0"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ScreenRecordPolice/DownloadManger.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "37"
+            endingLineNumber = "37"
+            landmarkName = "urlSession(_:downloadTask:didFinishDownloadingTo:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
 </Bucket>

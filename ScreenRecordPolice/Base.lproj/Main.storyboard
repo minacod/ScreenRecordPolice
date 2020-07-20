@@ -22,34 +22,46 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LbI-kO-iKD" customClass="UIButton">
-                                <rect key="frame" x="20" y="44" width="374" height="243"/>
+                                <rect key="frame" x="20" y="619" width="374" height="243"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="243" id="nHG-9b-lre"/>
                                 </constraints>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rv6-yL-TkE">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rv6-yL-TkE">
                                 <rect key="frame" x="184" y="509" width="46" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
                                 <connections>
                                     <action selector="downloadVideo:" destination="BYZ-38-t0r" eventType="touchUpInside" id="yoK-ym-fVs"/>
                                 </connections>
                             </button>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7hT-vf-iV7" customClass="QRScannerView" customModule="ScreenRecordPolice" customModuleProvider="target">
+                                <rect key="frame" x="20" y="44" width="374" height="374"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="7hT-vf-iV7" secondAttribute="height" multiplier="1:1" id="5vl-0S-Mkc"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="LbI-kO-iKD" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="ToV-m4-3EO"/>
+                            <constraint firstItem="Rv6-yL-TkE" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="1S1-0v-0bq"/>
+                            <constraint firstItem="7hT-vf-iV7" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="21I-dc-Bdn"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="7hT-vf-iV7" secondAttribute="trailing" constant="20" id="GW1-O6-7JE"/>
+                            <constraint firstItem="Rv6-yL-TkE" firstAttribute="top" secondItem="v3c-0D-fWW" secondAttribute="bottom" constant="50.5" id="GrD-1g-oXq"/>
+                            <constraint firstItem="LbI-kO-iKD" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="ToV-m4-3EO"/>
                             <constraint firstItem="v3c-0D-fWW" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="cZd-P1-oIK"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="LbI-kO-iKD" secondAttribute="trailing" constant="20" id="dbQ-oW-60y"/>
                             <constraint firstItem="v3c-0D-fWW" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="o8j-Jh-6Qx"/>
                             <constraint firstItem="LbI-kO-iKD" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="slp-wV-fU8"/>
+                            <constraint firstItem="7hT-vf-iV7" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="ufV-m5-DQG"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
                         <outlet property="VideoView" destination="LbI-kO-iKD" id="dAr-1t-D2g"/>
                         <outlet property="label" destination="v3c-0D-fWW" id="CH2-RS-SNp"/>
+                        <outlet property="qrScanner" destination="7hT-vf-iV7" id="jEF-Xv-F4a"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
