@@ -7,21 +7,23 @@
 //
 
 import UIKit
-import AVKit
 
 class ViewController: UIViewController {
 
     @IBOutlet weak var label: UILabel!
-    @IBOutlet weak var VideoView: UIButton!
+    @IBOutlet weak var videoView: VideoPlayerWithControlsView!
     @IBOutlet weak var qrScanner: QRScannerView!
+    
+    var orignalFrame : CGRect = CGRect()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         
         NotificationCenter.default.addObserver(self, selector: #selector(preventScreenRecording), name: UIScreen.capturedDidChangeNotification, object: nil)
-        VideoView.setTitle("Click To Watch", for: .normal)
-        VideoView.addTarget(self, action: #selector(presentAV), for: .touchDown)
+        //videoView.url =  URL(string: "http://techslides.com/demos/sample-videos/small.mp4")!
+        videoView.url =  URL(string: "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerFun.mp4")!
+        videoView.playerDelegate = self
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -33,54 +35,54 @@ class ViewController: UIViewController {
     }
     
     @objc func presentAV() {
-        let url = URL(string: "http://techslides.com/demos/sample-videos/small.mp4")!
-        let player = AVPlayer(url: url)
         
-        let playerViewController = AVPlayerViewController()
-        playerViewController.player = player
-        playerViewController.setValue(true, forKey: "requiresLinearPlayback")
-        present(playerViewController, animated: true) {
-          player.play()
-        }
     }
+    
+    @IBAction func moveToTableView(_ sender: Any) {
+        navigationController?.pushViewController(TableViewController(), animated: true)
+    }
+    
     
     @objc func preventScreenRecording() {
         label.text = "You have Been Caught Video Stoped"
-        VideoView.isEnabled = false
-        navigationController?.dismiss(animated: true, completion: nil)
+        //VideoView.isEnabled = false
+        UIView.transition(with: self.view, duration: 0.5, options:.transitionCrossDissolve,
+                                  animations: {
+                                      self.view.viewWithTag(1000)?.removeFromSuperview()}, completion: nil)
+        videoView.stopVideo()
     }
     
  
-    @IBAction func downloadVideo(_ sender: Any) {
-        let videoUrl = "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerFun.mp4"
-        
-        let docsUrl = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first!
-        
-        let destinationUrl = docsUrl.appendingPathComponent("1.mp4")
-        if(FileManager().fileExists(atPath: destinationUrl.path)){
-            print("\n\nfile already exists\n\n")
-            let avAssest = AVAsset(url: destinationUrl)
-            let playerItem = AVPlayerItem(asset: avAssest)
-            
-            let player = AVPlayer(playerItem: playerItem)
-            let playerViewController = AVPlayerViewController()
-            playerViewController.setValue(true, forKey: "requiresLinearPlayback")
-            playerViewController.player = player
-            
-            self.present(playerViewController, animated: true, completion: {
-                player.play()
-            })
-        }
-        else{
-            //DispatchQueue.global(qos: .background).async {
-            var request = URLRequest(url: URL(string: videoUrl)!)
-            request.httpMethod = "GET"
-            
-            DownloadManger.shared.urlSession.downloadTask(with: request).resume()
-            
-            
-        }
-    }
+//    @IBAction func downloadVideo(_ sender: Any) {
+//        let videoUrl = "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerFun.mp4"
+//        
+//        let docsUrl = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first!
+//
+//        let destinationUrl = docsUrl.appendingPathComponent("1.mp4")
+//        if(FileManager().fileExists(atPath: destinationUrl.path)){
+//            print("\n\nfile already exists\n\n \(destinationUrl)")
+//            let avAssest = AVAsset(url: destinationUrl)
+//            let playerItem = AVPlayerItem(asset: avAssest)
+//
+//            let player = AVPlayer(playerItem: playerItem)
+//            let playerViewController = AVPlayerViewController()
+//            playerViewController.setValue(true, forKey: "requiresLinearPlayback")
+//            playerViewController.player = player
+//
+//            self.present(playerViewController, animated: true, completion: {
+//                player.play()
+//            })
+//        }
+//        else{
+//            //DispatchQueue.global(qos: .background).async {
+//            var request = URLRequest(url: URL(string: videoUrl)!)
+//            request.httpMethod = "GET"
+//
+//            DownloadManger.shared.urlSession.downloadTask(with: request).resume()
+//
+//
+//        }
+//    }
     
 }
 
@@ -99,43 +101,42 @@ extension ViewController: QRScannerViewDelegate {
     
 }
 
-/*
- _ = URLSession.shared.dataTask(with: request, completionHandler: { (data, response, error) in
-     if(error != nil){
-         print("\n\nsome error occured\n\n")
-         return
+extension ViewController {
+    var fullScreenAnimationDuration: TimeInterval {
+         return 0.15
      }
-     if let response = response as? HTTPURLResponse{
-         if response.statusCode == 200{
-             DispatchQueue.main.async {
-                 if let data = data{
-                     if let _ = try? data.write(to: destinationUrl, options: Data.WritingOptions.atomic){
-                         print("\n\nurl data written\n\n")
-                         let baseUrl = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first!
 
-                         let assetUrl = baseUrl.appendingPathComponent("vid.mp4")
-
-                         let url = assetUrl
-                         print(url)
-                         let avAssest = AVAsset(url: url)
-                         let playerItem = AVPlayerItem(asset: avAssest)
-
-
-                         let player = AVPlayer(playerItem: playerItem)
-                         let playerViewController = AVPlayerViewController()
-                         playerViewController.setValue(true, forKey: "requiresLinearPlayback")
-                         playerViewController.player = player
-
-                         self.present(playerViewController, animated: true, completion: {
-                             player.play()
-                         })
-                     }
-                     else{
-                         print("\n\nerror again\n\n")
-                     }
-                 }//end if let data
-             }//end dispatch main
-         }//end if let response.status
+     func minimizeToFrame() {
+         UIView.animate(withDuration: fullScreenAnimationDuration) {
+            self.videoView.snp.remakeConstraints{
+                maker in
+                let safeArea = self.view.safeAreaLayoutGuide
+                maker.leading.equalTo(safeArea).offset(20)
+                maker.trailing.equalTo(safeArea).offset(-20)
+                maker.bottom.equalTo(safeArea)
+                maker.height.equalTo(243)
+            }
+         }
      }
- }).resume()
- */
+
+     func goFullscreen() {
+         UIView.animate(withDuration: fullScreenAnimationDuration) {
+            self.videoView.snp.remakeConstraints{
+                maker in
+                maker.bottom.top.leading.trailing.equalToSuperview()
+            }
+         }
+    }
+}
+
+extension ViewController : PlayerDelegate {
+    
+    func rotateView(isToFullScreen: Bool) {
+        if isToFullScreen {
+            goFullscreen()
+        }else{
+            minimizeToFrame()
+        }
+    }
+
+}

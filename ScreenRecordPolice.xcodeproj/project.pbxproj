@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -15,9 +15,18 @@
 		F1780F7024BF21220012C3C4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F1780F6E24BF21220012C3C4 /* Main.storyboard */; };
 		F1780F7224BF21260012C3C4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F1780F7124BF21260012C3C4 /* Assets.xcassets */; };
 		F1780F7524BF21260012C3C4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F1780F7324BF21260012C3C4 /* LaunchScreen.storyboard */; };
+		F1B231F724D02FA900B411D7 /* VideoContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1B231F624D02FA900B411D7 /* VideoContainerView.swift */; };
+		F1B7EE6B24C844B70041EA6D /* TableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F1B7EE6A24C844B70041EA6D /* TableCell.xib */; };
+		F1B7EE6F24C8463F0041EA6D /* TableViewControler.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1B7EE6E24C8463F0041EA6D /* TableViewControler.swift */; };
+		F1B7EE7124C84EB90041EA6D /* TableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1B7EE7024C84EB90041EA6D /* TableCell.swift */; };
+		F1C8FEEF24CDA36700248481 /* VideoPlayerWithControlsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1C8FEEE24CDA36700248481 /* VideoPlayerWithControlsView.swift */; };
+		FC5892E0C321D4F3F5039160 /* Pods_ScreenRecordPolice.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2222811E510081658D6CE4A0 /* Pods_ScreenRecordPolice.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2222811E510081658D6CE4A0 /* Pods_ScreenRecordPolice.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ScreenRecordPolice.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		99219E33288326E4E86EE67B /* Pods-ScreenRecordPolice.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ScreenRecordPolice.debug.xcconfig"; path = "Target Support Files/Pods-ScreenRecordPolice/Pods-ScreenRecordPolice.debug.xcconfig"; sourceTree = "<group>"; };
+		A6F417FCF00CC8DF290ED56E /* Pods-ScreenRecordPolice.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ScreenRecordPolice.release.xcconfig"; path = "Target Support Files/Pods-ScreenRecordPolice/Pods-ScreenRecordPolice.release.xcconfig"; sourceTree = "<group>"; };
 		F14CA63224C5AE8A004E3831 /* DownloadManger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DownloadManger.swift; sourceTree = "<group>"; };
 		F14CA63424C5CA34004E3831 /* QRScannerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRScannerView.swift; sourceTree = "<group>"; };
 		F1780F6524BF21220012C3C4 /* ScreenRecordPolice.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ScreenRecordPolice.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -28,6 +37,11 @@
 		F1780F7124BF21260012C3C4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F1780F7424BF21260012C3C4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F1780F7624BF21260012C3C4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F1B231F624D02FA900B411D7 /* VideoContainerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoContainerView.swift; sourceTree = "<group>"; };
+		F1B7EE6A24C844B70041EA6D /* TableCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TableCell.xib; sourceTree = "<group>"; };
+		F1B7EE6E24C8463F0041EA6D /* TableViewControler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewControler.swift; sourceTree = "<group>"; };
+		F1B7EE7024C84EB90041EA6D /* TableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableCell.swift; sourceTree = "<group>"; };
+		F1C8FEEE24CDA36700248481 /* VideoPlayerWithControlsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoPlayerWithControlsView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -35,17 +49,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FC5892E0C321D4F3F5039160 /* Pods_ScreenRecordPolice.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		7F29ADD5ACACB7F34ADEBF9F /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				99219E33288326E4E86EE67B /* Pods-ScreenRecordPolice.debug.xcconfig */,
+				A6F417FCF00CC8DF290ED56E /* Pods-ScreenRecordPolice.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		8D02AD0D3495EA1FA738E9ED /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				2222811E510081658D6CE4A0 /* Pods_ScreenRecordPolice.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		F1780F5C24BF21220012C3C4 = {
 			isa = PBXGroup;
 			children = (
 				F1780F6724BF21220012C3C4 /* ScreenRecordPolice */,
 				F1780F6624BF21220012C3C4 /* Products */,
+				7F29ADD5ACACB7F34ADEBF9F /* Pods */,
+				8D02AD0D3495EA1FA738E9ED /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -63,6 +97,8 @@
 				F1780F6824BF21220012C3C4 /* AppDelegate.swift */,
 				F1780F6A24BF21220012C3C4 /* SceneDelegate.swift */,
 				F1780F6C24BF21220012C3C4 /* ViewController.swift */,
+				F1B7EE6E24C8463F0041EA6D /* TableViewControler.swift */,
+				F1B7EE6924C844940041EA6D /* Views */,
 				F1780F6E24BF21220012C3C4 /* Main.storyboard */,
 				F1780F7124BF21260012C3C4 /* Assets.xcassets */,
 				F1780F7324BF21260012C3C4 /* LaunchScreen.storyboard */,
@@ -73,6 +109,17 @@
 			path = ScreenRecordPolice;
 			sourceTree = "<group>";
 		};
+		F1B7EE6924C844940041EA6D /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				F1B7EE6A24C844B70041EA6D /* TableCell.xib */,
+				F1B7EE7024C84EB90041EA6D /* TableCell.swift */,
+				F1C8FEEE24CDA36700248481 /* VideoPlayerWithControlsView.swift */,
+				F1B231F624D02FA900B411D7 /* VideoContainerView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -80,9 +127,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = F1780F7924BF21260012C3C4 /* Build configuration list for PBXNativeTarget "ScreenRecordPolice" */;
 			buildPhases = (
+				9853914806FEB75B1C618964 /* [CP] Check Pods Manifest.lock */,
 				F1780F6124BF21220012C3C4 /* Sources */,
 				F1780F6224BF21220012C3C4 /* Frameworks */,
 				F1780F6324BF21220012C3C4 /* Resources */,
+				FF19472453CB398F533D18CE /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -133,19 +182,66 @@
 			files = (
 				F1780F7524BF21260012C3C4 /* LaunchScreen.storyboard in Resources */,
 				F1780F7224BF21260012C3C4 /* Assets.xcassets in Resources */,
+				F1B7EE6B24C844B70041EA6D /* TableCell.xib in Resources */,
 				F1780F7024BF21220012C3C4 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		9853914806FEB75B1C618964 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-ScreenRecordPolice-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		FF19472453CB398F533D18CE /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ScreenRecordPolice/Pods-ScreenRecordPolice-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ScreenRecordPolice/Pods-ScreenRecordPolice-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-ScreenRecordPolice/Pods-ScreenRecordPolice-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		F1780F6124BF21220012C3C4 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F1B7EE6F24C8463F0041EA6D /* TableViewControler.swift in Sources */,
 				F1780F6D24BF21220012C3C4 /* ViewController.swift in Sources */,
+				F1B231F724D02FA900B411D7 /* VideoContainerView.swift in Sources */,
 				F14CA63324C5AE8A004E3831 /* DownloadManger.swift in Sources */,
+				F1B7EE7124C84EB90041EA6D /* TableCell.swift in Sources */,
+				F1C8FEEF24CDA36700248481 /* VideoPlayerWithControlsView.swift in Sources */,
 				F1780F6924BF21220012C3C4 /* AppDelegate.swift in Sources */,
 				F1780F6B24BF21220012C3C4 /* SceneDelegate.swift in Sources */,
 				F14CA63524C5CA34004E3831 /* QRScannerView.swift in Sources */,
@@ -290,6 +386,7 @@
 		};
 		F1780F7A24BF21260012C3C4 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 99219E33288326E4E86EE67B /* Pods-ScreenRecordPolice.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -307,6 +404,7 @@
 		};
 		F1780F7B24BF21260012C3C4 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A6F417FCF00CC8DF290ED56E /* Pods-ScreenRecordPolice.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
